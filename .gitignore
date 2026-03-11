@@ -1,0 +1,58 @@
+# Python cache
+__pycache__/
+.py[cod]
+$py.class
+
+# Distribution / packaging
+build/
+dist/
+.egg-info/
+.egg
+
+# Environments
+.env
+.venv/
+
+# PyInstaller
+.manifest
+.spec
+
+# PyBuilder
+target/
+maildir
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.
+.cache
+pytest_cache/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+.cover
+.py,cover
+.hypothesis/
+
+# VS Code / PyCharm
+.vscode/
+.idea/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# ruff
+.ruff_cache/
+
+# Logs
+*.log
