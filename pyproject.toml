@@ -34,6 +34,7 @@ __pycache__)
 line-length = 88
 target-version = "py313"
 exclude = [".venv", "__pycache__"]
+extend-include = ["*.ipynb"]
 select = ["E", "F", "I", "B", "UP", "C4", "PL"]
 ignore = ["E203", "E266", "E501"]
 
