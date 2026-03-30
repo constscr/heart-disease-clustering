@@ -14,7 +14,9 @@ dependencies = [
     "matplotlib (>=3.10.8,<4.0.0)",
     "scikit-learn (>=1.8.0,<2.0.0)"
 ]
-package-mode = false
+
+[tool.poetry]
+packages = [{include = "scripts"}]
 
 [tool.poetry.group.dev.dependencies]
 black = "^26.3.0"
