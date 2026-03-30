@@ -1,11 +1,12 @@
-import logging
 from pathlib import Path
 
 import pandas as pd
 from kaggle.api.kaggle_api_extended import KaggleApi
 
-# Logging configuration
-logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+from scripts.logger import setup_logger
+
+# Initialization of the logger
+logger = setup_logger(__name__)
 
 # Configuration constants
 DATASET_NAME = "redwankarimsony/heart-disease-data"
@@ -26,7 +27,7 @@ def download_data(dataset: str, output_dir: Path, target_file: str) -> None:
         output_dir.mkdir(parents=True, exist_ok=True)
 
         # Download dataset
-        logging.info(f"Starting download for dataset: {dataset}...")
+        logger.info(f"Starting download for dataset: {dataset}...")
         api.dataset_download_files(dataset, path=str(output_dir), unzip=True)
 
         # Validate and read the downloaded CSV file
@@ -34,15 +35,15 @@ def download_data(dataset: str, output_dir: Path, target_file: str) -> None:
 
         if data_file_path.exists():
             data = pd.read_csv(data_file_path)
-            logging.info(f"Data successfully downloaded to {output_dir}!")
-            logging.info(
+            logger.info(f"Data successfully downloaded to {output_dir}!")
+            logger.info(
                 f"Dataset dimensions: {data.shape[0]} rows, {data.shape[1]} columns."
             )
         else:
-            logging.error(f"File {target_file} not found after download completion.")
+            logger.error(f"File {target_file} not found after download completion.")
 
     except Exception:
-        logging.exception("Download process interrupted due to an error:")
+        logger.exception("Download process interrupted due to an error:")
 
 
 if __name__ == "__main__":
