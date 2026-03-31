@@ -1,5 +1,5 @@
 [project]
-name = "heart-disease-clustering"
+name = "heart-disease-analysis"
 version = "0.1.0"
 description = ""
 authors = [
